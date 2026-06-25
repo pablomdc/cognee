@@ -1348,6 +1348,9 @@ langchain = [
     { name = "langchain-text-splitters" },
     { name = "langsmith" },
 ]
+langsmith = [
+    { name = "langsmith" },
+]
 llama-cpp = [
     { name = "llama-cpp-python", extra = ["server"] },
 ]
@@ -1466,7 +1469,7 @@ requires-dist = [
     { name = "langchain-text-splitters", marker = "extra == 'langchain'", specifier = ">=0.3.2,<1.0.0" },
     { name = "langdetect", specifier = ">=1.0.9" },
     { name = "langfuse", marker = "extra == 'monitoring'", specifier = ">=2.32.0,<3" },
-    { name = "langsmith", marker = "extra == 'langchain'", specifier = ">=0.2.3,<1.0.0" },
+    { name = "langsmith", marker = "extra == 'langchain' or extra == 'langsmith'", specifier = ">=0.2.3,<1.0.0" },
     { name = "limits", specifier = ">=4.4.1,<5" },
     { name = "litellm", specifier = ">=1.83.7" },
     { name = "llama-cpp-python", extras = ["server"], marker = "extra == 'llama-cpp'", specifier = ">=0.3.0,<1.0.0" },
@@ -1552,7 +1555,7 @@ requires-dist = [
     { name = "uvicorn", specifier = ">=0.34.0,<1.0.0" },
     { name = "websockets", specifier = ">=15.0.1,<16.0.0" },
 ]
-provides-extras = ["api", "distributed", "scraping", "fastembed", "neo4j", "neptune", "postgres", "postgres-binary", "notebook", "langchain", "llama-index", "huggingface", "ollama", "mistral", "anthropic", "azure", "deepeval", "posthog", "groq", "llama-cpp", "docs", "codegraph", "evals", "graphiti", "aws", "dlt", "baml", "dev", "debug", "redis", "tracing", "monitoring", "docling"]
+provides-extras = ["api", "distributed", "scraping", "fastembed", "neo4j", "neptune", "postgres", "postgres-binary", "notebook", "langchain", "langsmith", "llama-index", "huggingface", "ollama", "mistral", "anthropic", "azure", "deepeval", "posthog", "groq", "llama-cpp", "docs", "codegraph", "evals", "graphiti", "aws", "dlt", "baml", "dev", "debug", "redis", "tracing", "monitoring", "docling"]
 
 [package.metadata.requires-dev]
 dev = [

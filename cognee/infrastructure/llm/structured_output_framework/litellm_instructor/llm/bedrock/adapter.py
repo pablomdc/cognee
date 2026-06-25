@@ -36,14 +36,14 @@ def _report_token_usage_to_langsmith(usage, model: str) -> None:
     if run is None:
         return
 
-    run.extra.setdefault("usage_metadata", {}).update(
-        {
+    run.set(
+        usage_metadata={
             "input_tokens": getattr(usage, "prompt_tokens", 0),
             "output_tokens": getattr(usage, "completion_tokens", 0),
             "total_tokens": getattr(usage, "total_tokens", 0),
-        }
+        },
+        metadata={"model": model},
     )
-    run.extra.setdefault("invocation_params", {})["model"] = model
 
 
 def _report_token_usage(result, model: str) -> None:
